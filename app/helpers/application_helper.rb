@@ -10,4 +10,11 @@ module ApplicationHelper
    end 
   end
 
+  def session_helper(layout_name)
+     if session[:source] 
+      greeting = "Thank you for visiting me from #{session[:source]}"
+      content_tag(:p, greeting, class: "#{layout_name}-greetings")
+     end 
+  end
+
 end
