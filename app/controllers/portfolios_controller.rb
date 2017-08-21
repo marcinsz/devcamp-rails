@@ -56,7 +56,7 @@ class PortfoliosController < ApplicationController
 
   def set_portfolio_item
      @portfolio_item = Portfolio.find(params[:id])
-     binding.pry
+     #binding.pry
   end
 end
 
