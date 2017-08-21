@@ -17,4 +17,9 @@ module ApplicationHelper
      end 
   end
 
+
+  def copyrights_generator
+    SpotOnViewTool::Renderer.copyright "Marcin Szot", "All rights reserved"
+  end
+
 end
