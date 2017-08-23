@@ -1,6 +1,9 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toogle_status]
   layout "blog"
+  
+  #petergate authorization configuration
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update]}, site_admin: :all
 
   # GET /blogs
   # GET /blogs.json
