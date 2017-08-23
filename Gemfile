@@ -56,3 +56,6 @@ gem 'devise', '~> 4.3'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'spoton_view_tool', git: "https://github.com/marcinsz/spoton_view_tool"
+
+#authentication
+gem 'petergate', '~> 1.7', '>= 1.7.5'
