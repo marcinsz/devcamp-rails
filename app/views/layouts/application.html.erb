@@ -14,7 +14,7 @@
   </head>
   <body>
 
-    <div class="site-wrapper">
+  <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
 
@@ -22,18 +22,14 @@
           <p class="alert"><%= alert %></p>
 
           <%= render "shared/application_nav"%>
-
-          <%= login_helper %>  
-
+          
           <%= yield %>
           
           <%= session_helper("application") %>
           
-          <p>
-            <%= copyrights_generator %>
-          </p> 
+          <%= render "shared/application_footer" %>
 
-          </div>
+        </div>
       </div>
   </div>
 </body>
