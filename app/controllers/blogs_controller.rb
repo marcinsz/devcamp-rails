@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   layout "blog"
   
   #petergate authorization configuration
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update]}, site_admin: :all
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update, :toogle_status ]}, site_admin: :all
 
   # GET /blogs
   # GET /blogs.json
