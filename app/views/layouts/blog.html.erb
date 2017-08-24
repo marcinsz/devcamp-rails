@@ -17,22 +17,12 @@
 
     <%= render "shared/blog_nav", location: "bottom" %>
 
-    <div class="blog-header">
-      <div class="container">
-        <h1 class="blog-title">My Blog</h1>
-        <p class="lead blog-description">An example blog template built with Bootstrap.</p>
-        <%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
-      </div>
-    </div>
+    <%= render 'shared/blog_masthead' %>
 
-
-    <!-- Start of container elements -->
     <div class="container">
       <div class="row">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-    
-        
     
         <%= yield %>
         
@@ -40,16 +30,8 @@
 
         <%= session_helper("blog") %>
 
-
       </div>
-      <!-- Start of footer -->
-      <footer class="blog-footer">
-        <p>
-          <%= copyrights_generator %>
-        </p> 
-      </footer>
-      <!-- End of footer -->
+      <%= render 'shared/blog_footer' %>
     </div>
-    <!-- end of container elements -->
   </body>
 </html>
