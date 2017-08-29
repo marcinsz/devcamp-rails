@@ -6,8 +6,8 @@ class Portfolio < ApplicationRecord
                                   reject_if: lambda {|attrs| attrs['name'].blank?}
 
 
-  def self.angular
-    where(subtitle: 'Angular')
+  def self.by_position
+    order("position ASC")
   end
 
   scope :ruby_on_rails_portfolio_items, -> {where(subtitle: 'Ruby on Rails')}
