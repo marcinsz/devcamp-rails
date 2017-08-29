@@ -54,6 +54,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'devise', '~> 4.3'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'spoton_view_tool', git: "https://github.com/marcinsz/spoton_view_tool"
 
