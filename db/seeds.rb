@@ -60,3 +60,11 @@ puts "9 portfolio items created"
 end
 puts "3 technology items created"
 
+User.create!(
+    email: "ms@spoton.pl",
+    name: "Marcin Szot",
+    password: "123456",
+    password_confirmation: "123456",
+    roles: "site_admin"
+  )
+puts "Admin account created"
