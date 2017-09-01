@@ -27,8 +27,6 @@
             poster: 'background.png'
             )
             %>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
 
           <%= render "shared/application_nav"%>
           
@@ -37,6 +35,8 @@
           <%= session_helper("application") %>
           
           <%= render "shared/application_footer" %>
+          
+          <%= render "shared/alerts" %>
 
         </div>
       </div>

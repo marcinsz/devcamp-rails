@@ -71,3 +71,6 @@ gem 'mini_magick', '~> 4.8'
 
 #JS form helper
 gem 'cocoon', '~> 1.2', '>= 1.2.10'
+
+#Form validation growl-like
+gem 'gritter', '~> 1.2'
