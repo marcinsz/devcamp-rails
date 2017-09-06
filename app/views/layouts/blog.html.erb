@@ -21,8 +21,6 @@
 
     <div class="container">
       <div class="row">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
     
         <%= yield %>
         
@@ -30,6 +28,8 @@
 
         <%= session_helper("blog") %>
 
+        <%= alerts %>
+        
       </div>
       <%= render 'shared/blog_footer' %>
     </div>
