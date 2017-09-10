@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toogle_status]
+  before_action :set_blog, only: [:edit, :update, :destroy, :toogle_status]
   layout "blog"
   
   #petergate authorization configuration
@@ -15,6 +15,9 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
+
     @page_title = @blog.title
   end
 
