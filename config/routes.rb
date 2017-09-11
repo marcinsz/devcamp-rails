@@ -15,8 +15,8 @@ Rails.application.routes.draw do
       get :toogle_status
     end
   end
+
+  mount ActionCable.server => '/cable'
   
   root 'pages#home'
-
-
 end
