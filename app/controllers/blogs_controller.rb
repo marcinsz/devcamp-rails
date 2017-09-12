@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    @blogs =  logged_in?(:site_admin)? Blog.recent.page(params[:page]).per(5) : Blog.recent.published.page(params[:page]).per(5) 
     @page_title = "My Blog"
   end
 
@@ -16,9 +16,12 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
-
-    @page_title = @blog.title
+    if logged_in?(:site_admin) || @blog.published?
+      @comment = Comment.new
+      @page_title = @blog.title
+    else
+      redirect_to blogs_url
+    end  
   end
 
   # GET /blogs/new
@@ -87,6 +90,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :topic_id)
     end
 end
