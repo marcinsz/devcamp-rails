@@ -7,6 +7,6 @@ class Blog < ApplicationRecord
 
   validates_presence_of :title, :body
 
-  scope :published, ->{where(status: 'published').order('created_at DESC')}
+  # scope :published, ->{where(status: 'published').order('created_at DESC')}
   scope :recent , -> {order('status DESC, created_at DESC')}
 end
