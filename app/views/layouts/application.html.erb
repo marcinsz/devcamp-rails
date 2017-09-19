@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= @page_title %></title>
-
     <meta neme="keywords" content="<%= @seo_keywords %>">
-
+    <%= favicon_link_tag 'favicons/favicon.ico' %>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -30,14 +29,9 @@
 
           <%= render "shared/application_nav"%>
           
-          <%= yield %>
-          
-          <%= session_helper("application") %>
-          
-          <%= render "shared/application_footer" %>
-          
+          <%= yield %>  
           <%= alerts %>
-
+          <%= render "shared/application_footer" %>
         </div>
       </div>
   </div>
